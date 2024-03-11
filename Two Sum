@@ -1,0 +1,17 @@
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        
+        hashmap={}
+
+        for i,num in enumerate(nums):
+            hashmap[num]=i
+
+        for i,num in enumerate(nums):
+            temp= target- nums[i]
+
+            #if temp in hashmap and hashmap[temp]!=i :
+            if temp in hashmap and hashmap[temp]!=i:
+                return[i,hashmap[temp]]
+               
+            
+        return []
