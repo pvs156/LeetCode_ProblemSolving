@@ -1,0 +1,15 @@
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
+        
+        #intialiszing an empty dictionary
+        hashmap={} 
+
+        for num in nums:
+            
+            if num in hashmap:
+                hashmap[num]+=1
+            else:
+                hashmap[num]=1
+        #to find the key with maximum value
+        majority=max(hashmap,key=hashmap.get)
+        return majority
