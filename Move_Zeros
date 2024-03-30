@@ -1,0 +1,18 @@
+Approach:
+1) set two pointers left & right
+2) left will be set to 0 and right one will be iterating
+3) will check if the right element isn't equal to zero and will swap right to left & left to right.
+4) After each iteration left pointer would be moving to next forward location in array.
+
+Solution:
+
+class Solution:
+    def moveZeroes(self, nums: List[int]) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        left=0
+        for right in range(len(nums)):
+            if nums[right]!=0:
+                nums[right],nums[left]=nums[left], nums[right]
+                left=left+1
